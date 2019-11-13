@@ -25,5 +25,6 @@ const oddeven=(plat,tanggal)=>{
  console.log(oddeven('b 1414 zz',23))
  console.log(oddeven('b 1111 zz',11))
  //
- 
+
+
 
