@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ecommerce ternama</title>
+    <style>
+        body{
+            background-color: lightpink;
+            font-family: Georgia, 'Times New Roman', Times, serif
+        }
+        tr,td,table{
+            border: 10px solid lavenderblush;
+            border-collapse: collapse;
+            padding: 10px
+        }
+        </style>
+</head>
+<body>
+    <center>
+        <h1>Beauty stuff</h1>
+        <table>
+            <thead>
+                <tr>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Image of the goods</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+        </table>
+        <table>
+            <tbody>
+                
+<form id="shopping-cart" action="cart.html" method="post">
+        <table class="shopping-cart">
+            <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <p id="sub-total">
+            <strong>Sub Total</strong>: <span id="stotal"></span>
+        </p>
+        <ul id="shopping-cart-actions">
+            <li>
+                <input type="submit" name="update" id="update-cart" class="btn" value="Update Cart" />
+            </li>
+            <li>
+                <input type="submit" name="delete" id="empty-cart" class="btn" value="Empty Cart" />
+            </li>
+            <li>
+            </li>
+        </ul>
+    </form>
+
+            </tbody>
+        </table>
+
+    </center>
+   </body>
+   <script>
+       class produk{
+           constructor (a,b,c,d){
+                this.produk=a
+                this.harga=b
+                this.gambarproduk=c
+                this.action=d
+        }
+    }
+    var listdata=[
+        new produk('lipstick cream','Rp.25.000','https://rollover-109a5.kxcdn.com/269-large_default/maxwell.jpg'),
+        new produk('lipstain','Rp 30.000','https://rollover-109a5.kxcdn.com/277-large_default/flushed-set.jpg'),
+        new produk('eyeshadow pallete','https://rollover-109a5.kxcdn.com/619-large_default/senja.jpg')
+    ]
+    var indexedit=-1
+    var inddexdel=-2
+    const Printdata=(a)=>{
+        var output=''
+        a.forEach(val.index) => {
+            if()
+            
+        });
+   </script>
+</html>

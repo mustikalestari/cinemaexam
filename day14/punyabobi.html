@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Bootstrap css -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- Local css -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- GoogleFont -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>User Data</title>
+  </head>
+  <body>
+    <!-- Content Start -->
+    <div class="container">
+      <h3>User Data</h3>
+      <!-- Form start -->
+      <form class="mt-3" id="user-form">
+        <!-- Nama -->
+        <div class="form-group row justify-content-md-center">
+          <label for="nama" class="col-sm-2 col-form-label">Nama</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="nama" />
+          </div>
+        </div>
+
+        <!-- Umur -->
+        <div class="form-group row justify-content-md-center">
+          <label for="umur" class="col-sm-2 col-form-label">Umur</label>
+          <div class="col-sm-4">
+            <input type="number" class="form-control" id="umur" />
+          </div>
+        </div>
+
+        <!-- Gender -->
+        <fieldset class="form-group">
+          <div class="row justify-content-md-center">
+            <legend class="col-sm-2 col-form-label">Gender</legend>
+            <div class="col-sm-4 pt-2">
+              <div class="form-check form-check-inline">
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="radio"
+                  id="radio1"
+                  value="Pria"
+                />
+                Pria
+                <label for="radio1" class="form-check-label"></label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="radio"
+                  id="radio2"
+                  value="Wanita"
+                />
+                Wanita
+                <label for="radio2" class="form-check-label"></label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Pekerjaan -->
+        <div class="form-group row justify-content-md-center">
+          <label for="pekerjaan" class="col-sm-2 col-form-label">Pekerjaan</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="pekerjaan" />
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <div class="row justify-content-md-center">
+          <button type="button" class="btn btn-secondary" id="btn-submit">
+            Submit
+          </button>
+        </div>
+      </form>
+      <!-- Form end -->
+
+      <!-- Sort option start -->
+      <h3 class="mt-3">Sort Data</h3>
+      <div class="row justify-content-md-center sort">
+        <!-- Sort nama -->
+        <button type="button" class="btn btn-primary" id="btn-sort-nama">
+          Nama
+        </button>
+
+        <!-- Sort umur -->
+        <button type="button" class="btn btn-success" id="btn-sort-umur">
+          Umur
+        </button>
+        <!-- Sort gender -->
+        <button type="button" class="btn btn-warning" id="btn-sort-gender">
+          Gender
+        </button>
+
+        <!-- Sort pekerjaan -->
+        <button type="button" class="btn btn-danger" id="btn-sort-pekerjaan">
+          Pekerjaan
+        </button>
+      </div>
+      <!-- Sort option end -->
+
+      <!-- Table start -->
+      <table class="table table-bordered table-sm mt-3">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Umur</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Pekerjaan</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Data display -->
+        </tbody>
+      </table>
+      <!-- Table end -->
+    </div>
+    <!-- Content End -->
+
+    <!-- Bootstrap Script -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Local script -->
+    <script src="./script.js"></script>
+  </body>
+</html>

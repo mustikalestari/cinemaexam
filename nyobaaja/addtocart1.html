@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-commerce</title>
+    <style>
+            tr,td,table{
+                border: 1px solid rgb(54, 81, 105);
+                border-collapse: collapse ;
+                padding: 10px;
+            }
+    </style>
+    <style>
+        body{
+            background-color: rosybrown;
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Rollover~</h1>
+        <table>
+            <thead>
+                <tr>
+                    <td>No.</td>
+                    <td>Produk</td>
+                    <td>Harga</td>
+                    <td>Gambar</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <br>
+        <h2>Your basket is currently empty.</h2>
+        <p id="output"></p>
+        <table>
+
+        </table>
+        <p></p>
+        <table>
+
+        </table>
+    </center>
+</body>
+<script>
+    class Barang{
+        constructor(a,b,c){
+            this.produk=a
+            this.harga=b
+            this.image=c
+        }
+    }
+    var daftar=[
+        new Barang('lipstick cream','25000','https://rollover-109a5.kxcdn.com/269-large_default/maxwell.jpg'),
+        new Barang('lipstain','30000','https://rollover-109a5.kxcdn.com/277-large_default/flushed-set.jpg'),
+        new Barang('eyeshadow pallete','50000','https://rollover-109a5.kxcdn.com/619-large_default/senja.jpg'),
+        ]
+    const print=(a)=>{
+        var output=''
+        a.forEach((val,index)=>{
+            output+=`<tr>
+                <td>${index+1}</td>
+                <td>${val.produk}</td>
+                <td>${val.harga}</td>
+                <td><img src=${val.image} height='100px'></td>
+                <td><button onclick='tambah(${index})'>add to cart</button></td>
+                </tr>`
+        })
+        document.getElementsByTagName('table')[0].innerHTML=output
+    }
+    print(daftar)
+    var listCart=[]
+    const printCart=(a)=>{
+        var output=''
+        a.forEach((val,index)=>{
+            output+=`<tr>
+                <td>${val.produk}</td>
+                <td>${val.harga}</td>
+                <td><img src=${val.image} height='100px'></td>
+                <td><button onclick=hapus(${index})>delete</td>`
+        })
+        document.getElementsByTagName('table')[1].innerHTML=output
+    }
+    total=0
+    const tambah=(a)=>{
+        // console.log('ini '+a)
+        total+=parseInt(daftar[a].harga)
+        // console.log(daftar[a].harga)
+        listCart.push(daftar[a])
+        printCart(listCart)
+        document.getElementsByTagName('h2')[0].innerHTML=`Items in basket ${listCart.length}`
+        document.getElementById('output').innerHTML=`Estimated Total Rp${total}`
+        document.getElementsByTagName('p')[1].innerHTML='<button onclick="checkout()">Checkout</button>'
+    }
+    const hapus=(a)=>{
+        // console.log(a)
+        total-=parseInt(listCart[a].harga)
+        // console.log(listCart[a].harga)
+        listCart.splice(a,1)
+        printCart(listCart)
+        document.getElementsByTagName('h2')[0].innerHTML=`Items in basket ${listCart.length}`
+        document.getElementById('output').innerHTML=`Estimated Total Rp${total}`
+    }
+    const checkout=()=>{
+        document.getElementsByTagName('table')[2].innerHTML=`
+        <tr>
+            <td><input id='bayar' type='number' placeholder='masukan uang anda'></td>
+            <td><button onclick='bayar()'>bayar</button></td>
+        <tr>`
+    
+    }
+    const bayar=()=>{
+        if(document.getElementById("inputbayar").value<sumarray(listCart)){
+            alert('uang anda tidak cukup')
+        }else if(document.getElementById("inputbayar").value>=sumarray(listCart)){
+            clearInterval(timer)
+            alert('terimakasih sudah belanja ditoko kami,kembalian anda Rp. '+(document.getElementById('inputbayar')))
+        }
+        // uang=document.getElementById('bayar').value
+        // if(uang<total){
+        //     alert
+        // }
+    
+    }
+    var time = 30
+    var timer 
+    function start(){
+        time = time + 1
+        timer=setInterval(waktu,1000)
+    }
+    function waktu(){
+        time-=1
+        document.getElementById("timer").innerHTML=`waktu tersisa ${time}`
+        if (time <=0){
+            clearInterval(timer)
+            alert('waktu checkout habis..')
+            listCart=[]
+            document.getElementsByTagName('h1')[1].innerHTML='keranjang masih kosong'
+            document.getElementById('cart').innerHTML=``
+            document.getElementsByTagName('thead')[1].innerHTML=''
+            document.getElementsByTagName('tbody')[1].innerHTML=''
+            document.getElementsByid('divbayar').innerHTML=''
+            document.getElementById('timer').innerHTML=''
+            time=30
+        }
+    
+
+    }
+
+    
+</script>
+</html>

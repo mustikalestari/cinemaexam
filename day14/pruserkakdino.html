@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Daftar User</title>
+    <style>
+        tr,td,th,table{
+            border: 2px double pink;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border-collapse: collapse;
+
+            padding: 20px
+        }
+
+        #cover{
+            border: 10px double palevioletred;
+            margin: 1em 30em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <center>
+        <h2>FORM USER~</h2>
+        <p id="cover">
+            <input class="add_user" id="name" type="text" placeholder=" enter your name"><br><br>
+            <input class="add_user" id="age" type="number" placeholder=" enter your age"><br><br>
+            Gender: <input name="gender" type="radio">Male <input name="gender" type="radio">Female<br><br>
+            <input class="add_user" id="job" type="text" placeholder=" enter your job"><br><br>
+            <button onclick="btnAddUser()"> submit</button><br><br>
+            Sort By: <br>
+            <button onclick="sortByname()"> Name</button> 
+            <button onclick="sortByage()"> Age</button> 
+            <button onclick="sortBygender()"> Gender</button> 
+            <button onclick="sortByjob()"> Job</button>
+        </p>
+        <h3>the list</h3>
+        <table id="output"></table>
+    </center>
+    
+</body>
+
+<script>
+    // object user
+    function User(a,b,c,d) {
+        this.name=a
+        this.age=b
+        this.gender=c
+        this.job=d
+    }
+    var listuser = []
+    
+    // function untuk menampilkan data user dalam tabel
+    const showData=(a)=>{
+        var output = ''
+        a.forEach((val,index) => {
+            if (index==0) {     
+                output+=`<tr>
+                            <th>Nos</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Job</th>
+                        </tr>
+                        <tr>
+                            <td>${index+1}</td>
+                            <td>${val.name}</td>
+                            <td>${val.age}</td>
+                            <td>${val.gender}</td>
+                            <td>${val.job}</td>
+                        </tr>`
+            } else {
+                output+=`<tr>
+                            <td>${index+1}</td>
+                            <td>${val.name}</td>
+                            <td>${val.age}</td>
+                            <td>${val.gender}</td>
+                            <td>${val.job}</td>
+                        </tr>`
+            }
+            document.getElementById('output').innerHTML=output
+        });
+    }
+    showData(listuser)
+
+    // function untuk add user baru
+    const btnAddUser=()=>{
+        var gender = ''
+        if (document.getElementsByName('gender')[0].checked) {
+            gender = 'Male'
+        } else if(document.getElementsByName('gender')[1].checked){
+            gender = 'Female'
+        }
+    var job = document.getElementById("job").value
+        var input=document.getElementsByClassName('add_user')
+        var newName=input[0].value
+        var newAge=input[1].value
+        var newGender=gender
+        var newJob=input[2].value
+        var x = new User(newName,newAge,newGender,newJob)
+        listuser.push(x)
+        showData(listuser)
+    }
+    
+    console.log(listuser)
+    // console.log(name)
+    // console.log(job)
+
+    // function untuk sort by name
+    const sortByname=()=>{
+        for(var i = 0; i < listuser.length; i++){
+            for(var j = 0; j < listuser.length; j++){
+                if (listuser[i].name<listuser[j].name) {
+                    temp = listuser[i]
+                    listuser[i] = listuser[j]
+                    listuser[j] = temp
+                }
+            }
+        }
+        document.getElementById('output').innerHTML=listuser
+        showData(listuser)
+    }
+
+    // function untuk sort by age
+    const sortByage=()=>{
+        for(var i = 0; i < listuser.length; i++){
+            for(var j = 0; j < listuser.length; j++){
+                if (parseInt(listuser[i].age)<parseInt(listuser[j].age)) {
+                    temp = listuser[i]
+                    listuser[i] = listuser[j]
+                    listuser[j] = temp
+                }
+            }
+        }
+        document.getElementById('output').innerHTML=listuser
+        showData(listuser)
+    }
+</script>
+</html>

@@ -1,0 +1,95 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #c1d1f0;
+        }
+        .calc{
+            border: 2px solid;
+            margin: 0em 33em;
+            padding: 2em;
+        }
+        .kuad{
+            border: 2px solid;
+            margin: 0em 36em;
+        }
+        h2,h3,h4{
+            color: #1f3d7a;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h2>Kalkulator Sederhana</h2>
+        <div class="calc">
+            <input type="number" id="angka1" placeholder="Angka pertama"> &nbsp;
+            <input type="number" id="angka2" placeholder="Angka kedua">
+            <br><br>
+            <button onclick="tambah()">Tambah (+)</button> &nbsp;
+            <button onclick="kurang()">Kurang (-)</button> &nbsp;
+            <button onclick="kali()">Kali (x)</button> &nbsp;
+            <button onclick="bagi()">Bagi (/)</button>
+            <br><br>
+            <button onclick="pangkat()">Pangkat (^)</button> &nbsp;
+            <button onclick="modulus()">Modulus (%)</button> &nbsp;
+        </div>
+        <h3>Hasil:</h3>
+        <h3 id="hasilCalc"></h3>
+        <br><br><br>
+        <div class="kuad">
+            <h4>Kalkulator Kuadarat</h4>
+            <input type="number" id="angka" placeholder="Masukkan angka"> &nbsp;
+            <button onclick="kuadrat()">Kuadratkan!</button>
+            <h4>Hasil:</h4>
+            <h4 id="hasilKuad"></h4>
+        </div>
+        
+    </center>
+</body>
+<script>
+    const tambah=()=>{
+        angka1=document.getElementById('angka1').value
+        angka2=document.getElementById('angka2').value
+        let output=angka1+angka2
+        document.getElementById('hasilCalc').innerHTML=`${angka1} + ${angka2} adalah ${output}`
+    }
+    const kurang=()=>{
+        angka1=document.getElementById('angka1').value
+        angka2=document.getElementById('angka2').value
+        let output=angka1-angka2
+        document.getElementById('hasilCalc').innerHTML=`${angka1} - ${angka2} adalah ${output}`
+    }
+    const kali=()=>{
+        angka1=document.getElementById('angka1').value
+        angka2=document.getElementById('angka2').value
+        let output=angka1*angka2
+        document.getElementById('hasilCalc').innerHTML=`${angka1} x ${angka2} adalah ${output}`
+    }
+    const bagi=()=>{
+        angka1=document.getElementById('angka1').value
+        angka2=document.getElementById('angka2').value
+        let output=angka1/angka2
+        document.getElementById('hasilCalc').innerHTML=`${angka1} / ${angka2} adalah ${output}`
+    }
+    const pangkat=()=>{
+        angka1=document.getElementById('angka1').value
+        angka2=document.getElementById('angka2').value
+        let output=angka1^angka2
+        document.getElementById('hasilCalc').innerHTML=`${angka1}^${angka2} adalah ${output}`
+    }
+    const modulus=()=>{
+        angka1=document.getElementById('angka1').value
+        angka2=document.getElementById('angka2').value
+        let output=angka1%angka2
+        document.getElementById('hasilCalc').innerHTML=`${angka1} % ${angka2} adalah ${output}`
+    }
+    const kuadrat=()=> {
+        let angka=document.getElementById('angka').value
+        output=Math.pow(angka,2)
+        document.getElementById('hasilKuad').innerHTML=`${angka} kuadrat adalah ${output}`
+    }
+</script>
+</html>

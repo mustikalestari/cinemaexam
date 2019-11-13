@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #c1d1f0;
+        }
+        .content{
+            border: 2px solid;
+            margin: 2em 10em;
+            padding-bottom: 2em;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="content">
+            <h2>Kalkulator Pangkat</h2>
+            <input type="number" id="angka" placeholder="Masukkan angka">
+            <br><br>
+            <input type="number" id="pangkat" placeholder="Masukkan pangkat">
+            <br><br>
+            <button onclick="pangkat()">Pangkatkan!</button>
+        </div>
+        <br>
+        <h4 id="hasil"></h4>
+    </center>
+</body>
+<script>
+    const pangkat=()=>{
+        let angka=document.getElementById('angka').value
+        let pangkat=document.getElementById('pangkat').value
+        let output=Math.pow(angka,pangkat)
+        document.getElementById('hasil').innerHTML=`${angka} pangkat ${pangkat} adalah ${output}`
+    }
+</script>
+</html>

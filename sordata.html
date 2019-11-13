@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <table>
+            <tr>
+                <td>
+                    <h1> Input Manusia</h1>
+                    nama; <input type="text" id='inputnama'/><br><br>
+                    usia; <input type="number" id='usia'/><br><br>
+                    gender; pria <input type="radio" name="sex"/> wanita <input type="radio" name="sex"/> <br><br>
+                    pekerjaan; <input type="text" id='inputpekerjaan'/> <br><br>
+                    <button onclick="onSubmitClick()"> submit </button>
+
+                </td>
+            </tr>
+        </table>
+        <br><br>
+        <button onclick="sort('nama')">Nama</button>
+        <button onclick="sort('usia')">Usia</button>
+        <button onclick="sort('gender')">Gender</button>
+        <button onclick="sort('pekerjaan')">Pekerjaan</button>
+        <br></br>
+        <table>
+            <thead>
+                <tr>
+                    <td> No.</td>
+                    <td> Nama</td>
+                    <td> usia </td>
+                    <td> gender </td>
+                    <td> pekerjaan </td>
+                    </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+        </table>
+    </center>
+</body>
+<script>
+    class manusia{
+        constructor(nama,usia,gender,pekerjaan){
+            this.nama=nama,
+            this.usia=usia,
+            this.gender=gender,
+            this.pekerjaan=pekerjaan
+        }
+    }
+    var arrManusia=[]
+    const printData=bebas=>{
+        var output=''
+        for(var i=0;i<bebas.length;i++){
+            output+= `<tr>
+                         <td>${i+1}</td>
+                         <td>${bebas[i].nama}</td>
+                         <td>${bebas[i].usia}</td>
+                         <td>${bebas[i].gender}</td>
+                         <td>${bebas[i].pekerjaan}</td>
+                    </tr>`
+        }
+        document.getElementsByTagName('tbody')[0].innerHTML=output
+    }
+    const onSubmitClick=function(){
+        var nama=document.getElementById('inputnama').value
+        var usia=document.getElementById('usia').value
+        var gender=''
+        if(document.getElementsByName('sex')[0].checked){
+            gender='pria'
+        }else if(document.getElementsByName('sex')[1].checked){
+            gender='wanita'
+        }
+        var pekerjaan=document.getElementById('inputpekerjaan')
+        console.log(pekerjaan)
+        // console.log(nama,usia,gender,pekerjaan)
+        arrManusia.push(new Manusia(nama,usia,gender,pekerjaan.value))
+        printData(arrManusia)
+    }
+    const sort=bebas=>{
+        for(var i=arrManusia.length-1;i>0;i--){
+            for(varj=0;j<i;j++){
+                if(arrManusia[j][bebas]<arrManusia[j+1][bebas]){
+                    var temp=arrManusia[j]
+                    arrManusia[j]=arrManusia[j+1]
+                    arrManusia [j+1]=temp
+                }
+            }
+        }
+        printData(arrManusia)
+    }
+
+
+</script>
+</html>

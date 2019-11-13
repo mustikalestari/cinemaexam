@@ -1,0 +1,82 @@
+<html>
+<head>
+        <title>Quadratic</title>
+    <style>
+		form#page
+		{
+			width: 550px;
+			margin: 24px auto;
+			padding: 24px 32px;
+			border: solid 1px #BBF;
+			border-radius: 8px;
+			box-shadow: 2px 2px 2px #88C ;
+			background-color: #EEF;
+			line-height: 48px;
+			font-family: Geneva, Arial;
+			color: #200040;
+			font-size: 14px;
+			font-weight: bold;
+		}
+
+		form#page input
+		{
+			border: solid 1px #88C;
+			padding: 2px 8px;
+			border-radius	: 4px;
+			text-align: right;
+			font-family: Geneva, Arial;
+			color: #200040;
+			font-size	: 14px;
+			font-weight: bold;
+			color: #003;
+		}
+
+		form#page span
+		{
+			display: block;
+			margin-top: -24px;
+			font-size	: 10px;
+			font-weight: normal;
+		}
+	</style>
+</head>
+<body>
+	<form id='page' name='page'>
+	    <center>
+		<input name='a' size=4> * x<sup>2</sup> + <input name='b' size=4> * x + <input name='c' size=4> = 0
+		<br>
+		<input type='button' value='Root' onclick=' root(); '> 
+		<hr>
+		x<sub>1</sub> = <input name='x1' size=16 readonly> <br>
+		x<sub>2</sub> = <input name='x2' size=16 readonly> <br>
+	    </center>
+	</form>
+        <script>
+		function root()
+		{
+			a = parseFloat(document.page.a.value)
+			b = parseFloat(document.page.b.value)
+			c = parseFloat(document.page.c.value)
+			if( a==0 )
+			{
+				alert("The coefficient of x2 can not be 0")
+			}
+			else
+			{
+				d = b*b-4*a*c
+				if( d>=0 )
+				{
+					x1 = ( -b + Math.sqrt(d) ) / 2 / a
+					x2 = ( -b - Math.sqrt(d) ) / 2 / a
+				}
+				else
+				{
+					x1 = x2 = "Not real"
+				}
+				document.page.x1.value = x1
+				document.page.x2.value = x2
+			}
+		}
+	</script>
+</body>
+</html>
