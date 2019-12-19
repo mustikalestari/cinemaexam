@@ -1,0 +1,351 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "role": "admin",
+      "password": "123"
+    },
+    {
+      "id": "2",
+      "username": "ida",
+      "role": "user",
+      "password": "123"
+    },
+    {
+      "id": "3",
+      "username": "hapis",
+      "role": "user",
+      "password": "1234"
+    },
+    {
+      "username": "jan",
+      "password": "cuk",
+      "role": "user",
+      "id": "etIHl-D"
+    },
+    {
+      "username": "kill",
+      "password": "asd",
+      "role": "user",
+      "id": "L8PpdhC"
+    },
+    {
+      "username": "tari",
+      "password": "123",
+      "role": "user",
+      "id": "ExtWCjL"
+    },
+    {
+      "username": "fakhran",
+      "password": "123",
+      "role": "user",
+      "id": "4GBQ7jd"
+    },
+    {
+      "username": "mustika",
+      "password": "tari",
+      "role": "user",
+      "id": "Msu3jzv"
+    },
+    {
+      "username": "aya",
+      "password": "123",
+      "role": "user",
+      "id": "XMbmZgS"
+    }
+  ],
+  "studios": [
+    {
+      "id": 1,
+      "nama": "studio1",
+      "jumlahKursi": 260
+    },
+    {
+      "id": 2,
+      "nama": "studio2",
+      "jumlahKursi": 240
+    },
+    {
+      "id": 3,
+      "nama": "studio3",
+      "jumlahKursi": 220
+    },
+    {
+      "nama": "studio 4",
+      "jumlahKursi": "200",
+      "id": 4
+    },
+    {
+      "nama": "studio 5",
+      "jumlahKursi": "200",
+      "id": 5
+    },
+    {
+      "nama": "studio 6",
+      "jumlahKursi": "200",
+      "id": 6
+    }
+  ],
+  "movies": [
+    {
+      "title": "Marriage Story",
+      "image": "https://m.media-amazon.com/images/M/MV5BZGVmY2RjNDgtMTc3Yy00YmY0LTgwODItYzBjNWJhNTRlYjdkXkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_.jpg",
+      "sinopsis": "A stage director and his actor wife struggle through a gruelling, coast-to-coast divorce that pushes them to their personal and creative extremes.",
+      "sutradara": "Noah Baumbach",
+      "genre": "Drama",
+      "durasi": "130",
+      "produksi": "RANS",
+      "jadwal": [
+        12,
+        14
+      ],
+      "trailers": "",
+      "studioId": "1",
+      "id": "2"
+    },
+    {
+      "title": "The Grand Budapest Hotel",
+      "image": "https://m.media-amazon.com/images/M/MV5BODNmZjQ2M2EtOTFhYi00OGE1LWEwZTItNGJiZmQ4NWY5YTc0XkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_.jpg",
+      "sinopsis": "Gustave H, a concierge, is wrongly framed for murder at the Grand Budapest Hotel. In the process of proving his innocence, he befriends a lobby boy.",
+      "sutradara": "Wes Anderson",
+      "genre": "Comedy,Action",
+      "durasi": "100",
+      "produksi": "RANS",
+      "jadwal": [
+        12,
+        14,
+        18,
+        20
+      ],
+      "trailer": "",
+      "studioId": "3",
+      "id": "rk6ZIp0"
+    },
+    {
+      "title": "Mood Indigo",
+      "image": "https://m.media-amazon.com/images/M/MV5BZGU2MDhiNjYtODJmNy00YzllLWJlZGItZTdiNmRiY2Q3MjBjXkEyXkFqcGdeQXVyNDgzNjg5Nw@@._V1_.jpg",
+      "sinopsis": "DescriptionA man (Romain Duris) sees his fortune dwindle after his wife (Audrey Tautou) develops a strange condition requiring that she always be surrounded by fresh flowers, or she will die.",
+      "sutradara": "Michael Gondry",
+      "genre": "Romance",
+      "durasi": "131",
+      "produksi": "RANS",
+      "jadwal": [
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "trailer": "",
+      "studioId": "2",
+      "id": "y38Bqns"
+    },
+    {
+      "title": "Moonrise Kingdom",
+      "image": "https://posteritati.com/posters/000/000/050/827/moonrise-kingdom-md-web.jpg",
+      "sinopsis": "Sam, a 12-year-old orphan, falls in love with Suzy and the two run away to a secluded cove on an island, prompting the entire town to begin a search.",
+      "sutradara": "Wes Anderson",
+      "genre": "Family Friendly",
+      "durasi": "94",
+      "produksi": "RANS",
+      "jadwal": [
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "trailer": "",
+      "studioId": "3",
+      "id": "or0YiU9"
+    }
+  ],
+  "orders": [
+    {
+      "userId": "1",
+      "movieId": "rk6ZIp0",
+      "jadwal": 12,
+      "bayar": true,
+      "id": 1
+    },
+    {
+      "userId": "1",
+      "movieId": "y38Bqns",
+      "jadwal": 12,
+      "bayar": true,
+      "id": 2
+    },
+    {
+      "userId": "ExtWCjL",
+      "movieId": "y38Bqns",
+      "jadwal": 12,
+      "bayar": true,
+      "id": 4
+    },
+    {
+      "userId": "ExtWCjL",
+      "movieId": "rk6ZIp0",
+      "jadwal": 12,
+      "bayar": true,
+      "id": 5
+    },
+    {
+      "userId": "ExtWCjL",
+      "movieId": "y38Bqns",
+      "jadwal": 12,
+      "bayar": true,
+      "id": 6
+    },
+    {
+      "userId": "ExtWCjL",
+      "movieId": "rk6ZIp0",
+      "jadwal": 12,
+      "bayar": true,
+      "id": 7
+    },
+    {
+      "userId": "ExtWCjL",
+      "movieId": "rk6ZIp0",
+      "jadwal": 12,
+      "bayar": true,
+      "id": 8
+    },
+    {
+      "userId": "ExtWCjL",
+      "movieId": "rk6ZIp0",
+      "jadwal": 12,
+      "bayar": true,
+      "id": 9
+    },
+    {
+      "userId": "3",
+      "movieId": "rk6ZIp0",
+      "jadwal": 12,
+      "bayar": true,
+      "id": 10
+    },
+    {
+      "userId": "ExtWCjL",
+      "movieId": "rk6ZIp0",
+      "jadwal": 12,
+      "bayar": true,
+      "id": 11
+    },
+    {
+      "userId": "ExtWCjL",
+      "movieId": "or0YiU9",
+      "jadwal": 12,
+      "bayar": true,
+      "id": 12
+    },
+    {
+      "userId": "ExtWCjL",
+      "movieId": "or0YiU9",
+      "jadwal": 12,
+      "bayar": true,
+      "id": 13
+    },
+    {
+      "userId": "ExtWCjL",
+      "movieId": "2",
+      "jadwal": 12,
+      "bayar": true,
+      "id": 14
+    },
+    {
+      "userId": "ExtWCjL",
+      "movieId": "rk6ZIp0",
+      "totalharga": 30000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 15
+    }
+  ],
+  "ordersDetails": [
+    {
+      "orderId": 1,
+      "seat": 9,
+      "row": 4,
+      "id": 1
+    },
+    {
+      "orderId": 2,
+      "seat": 9,
+      "row": 6,
+      "id": 2
+    },
+    {
+      "orderId": 4,
+      "seat": 7,
+      "row": 3,
+      "id": 4
+    },
+    {
+      "orderId": 5,
+      "seat": 12,
+      "row": 1,
+      "id": 5
+    },
+    {
+      "orderId": 6,
+      "seat": 11,
+      "row": 2,
+      "id": 6
+    },
+    {
+      "orderId": 7,
+      "seat": 8,
+      "row": 5,
+      "id": 7
+    },
+    {
+      "orderId": 8,
+      "seat": 12,
+      "row": 4,
+      "id": 8
+    },
+    {
+      "orderId": 9,
+      "seat": 10,
+      "row": 2,
+      "id": 9
+    },
+    {
+      "orderId": 10,
+      "seat": 10,
+      "row": 4,
+      "id": 10
+    },
+    {
+      "orderId": 11,
+      "seat": 8,
+      "row": 3,
+      "id": 11
+    },
+    {
+      "orderId": 12,
+      "seat": 8,
+      "row": 4,
+      "id": 12
+    },
+    {
+      "orderId": 13,
+      "seat": 8,
+      "row": 3,
+      "id": 13
+    },
+    {
+      "orderId": 14,
+      "seat": 5,
+      "row": 4,
+      "id": 14
+    },
+    {
+      "orderId": 15,
+      "seat": 8,
+      "row": 4,
+      "id": 15
+    }
+  ]
+}
